@@ -55,25 +55,8 @@ function buildSocketString(sockets: DimSockets): string {
   );
 
   // return socketItems.flat().join(',');
-  // return flattenStringArray(socketItems).join(',');
   return flattenAnyArray(socketItems).join(',');
 }
-// function flattenStringArray(arr: string[][]) {
-//   const res: string[] = [];
-//   arr.forEach((strArr) => {
-//     strArr.forEach((strMember) => {
-//       if (typeof strMember === 'string') {
-//         res.push(strMember);
-//       } else {
-//         console.log({
-//           error: 'Type of strMember is not string; flattenStringArray method may need tuning...',
-//           object: strMember
-//         });
-//       }
-//     });
-//   });
-//   return res;
-// }
 /** This does not limit max recursion and ignores typing */
 function flattenAnyArray(arr: any): any[] {
   const res: any[] = [];
@@ -90,22 +73,6 @@ function flattenAnyArray(arr: any): any[] {
   }
   return res;
 }
-// function flatten(arr: []) {
-//   const res = [];
-//   arr.forEach((el) => {
-//     if (typeof el === "string") {
-//       return el;
-//     }
-//     if (!el || el.length === 0) {
-//       return '';
-//     }
-//     if (el is any[]) {
-//       flatten(el);
-//     } else {
-//       res.push(el);
-//     }
-//   })
-// }
 
 function buildNodeString(nodes) {
   let data = '';
